@@ -1,6 +1,6 @@
 GAME
 {
-	version = 1.0.5
+	version = 1.1.0
 	Title = Bac a sable (SANDBOX)
 	Description = No description available.
 	linkURL = 
@@ -11,6 +11,8 @@ GAME
 	editor = None
 	flag = Squad/Flags/kerbal1
 	launchID = 4
+	modded = True
+	envInfo =  - Environment Info - Unix 7FFFFFFFFFFFFFFF  Args: KSP  - 
 	PARAMETERS
 	{
 		preset = Normal
@@ -58,6 +60,11 @@ GAME
 			CanGoInTrackingStation = True
 			CanLaunchAtPad = True
 			CanLaunchAtRunway = True
+			CanGoToAdmin = True
+			CanGoToAstronautC = True
+			CanGoToMissionControl = True
+			CanGoToRnD = True
+			CanSelectFlag = True
 			CanLeaveToMainMenu = True
 		}
 		DIFFICULTY
@@ -354,6 +361,46 @@ GAME
 		{
 			intact = True
 		}
+		SpaceCenter/LaunchPad/Facility/BigTanks
+		{
+			intact = True
+		}
+		SpaceCenter/LaunchPad/Facility/SmallTanks
+		{
+			intact = True
+		}
+		SpaceCenter/LaunchPad/Facility/building
+		{
+			intact = True
+		}
+		SpaceCenter/MissionControl/Facility/Antenna
+		{
+			intact = True
+		}
+		SpaceCenter/TrackingStation/Facility/building/Building
+		{
+			intact = True
+		}
+		SpaceCenter/TrackingStation/Facility/building/Antenna_East
+		{
+			intact = True
+		}
+		SpaceCenter/TrackingStation/Facility/building/Antenna_North
+		{
+			intact = True
+		}
+		SpaceCenter/TrackingStation/Facility/building/Antenna_South
+		{
+			intact = True
+		}
+		SpaceCenter/VehicleAssemblyBuilding/Facility/SouthComplex
+		{
+			intact = True
+		}
+		SpaceCenter/VehicleAssemblyBuilding/Facility/VAB3
+		{
+			intact = True
+		}
 	}
 	SCENARIO
 	{
@@ -371,7 +418,7 @@ GAME
 	SCENARIO
 	{
 		name = ResourceScenario
-		scene = 5, 7, 6
+		scene = 7, 8, 5, 6
 		RESOURCE_SETTINGS
 		{
 			GameSeed = 198529008
@@ -386,10 +433,15 @@ GAME
 		{
 		}
 	}
+	SCENARIO
+	{
+		name = ScenarioAchievements
+		scene = 7, 8, 5, 6
+	}
 	FLIGHTSTATE
 	{
-		version = 1.0.5
-		UT = 4525.86696533498
+		version = 1.1.0
+		UT = 4529.68696533506
 		activeVessel = 0
 		mapViewFiltering = -1026
 		VESSEL
@@ -473,6 +525,9 @@ GAME
 			{
 			}
 			CTRLSTATE
+			{
+			}
+			VESSELMODULES
 			{
 			}
 		}
@@ -1792,6 +1847,9 @@ GAME
 				trimRoll = 0
 				mainThrottle = 0
 			}
+			VESSELMODULES
+			{
+			}
 		}
 		VESSEL
 		{
@@ -1874,6 +1932,9 @@ GAME
 			{
 			}
 			CTRLSTATE
+			{
+			}
+			VESSELMODULES
 			{
 			}
 		}
@@ -1960,6 +2021,9 @@ GAME
 			CTRLSTATE
 			{
 			}
+			VESSELMODULES
+			{
+			}
 		}
 		VESSEL
 		{
@@ -2042,6 +2106,9 @@ GAME
 			{
 			}
 			CTRLSTATE
+			{
+			}
+			VESSELMODULES
 			{
 			}
 		}
@@ -2128,6 +2195,9 @@ GAME
 			CTRLSTATE
 			{
 			}
+			VESSELMODULES
+			{
+			}
 		}
 		VESSEL
 		{
@@ -2212,6 +2282,9 @@ GAME
 			CTRLSTATE
 			{
 			}
+			VESSELMODULES
+			{
+			}
 		}
 		VESSEL
 		{
@@ -2294,6 +2367,9 @@ GAME
 			{
 			}
 			CTRLSTATE
+			{
+			}
+			VESSELMODULES
 			{
 			}
 		}
@@ -4397,7 +4473,7 @@ GAME
 				mid = 3172848536
 				launchID = 3
 				parent = 6
-				position = -1.58363127708435,-6.94071102142334,0.600001275539398
+				position = -1.583631,-6.9408,0.5000013
 				rotation = -0.7074198,0.001171719,-0.001171876,0.7067921
 				mirror = 1,1,1
 				symMethod = Mirror
@@ -4721,6 +4797,30 @@ GAME
 						}
 					}
 				}
+				MODULE
+				{
+					name = ModuleWheelSteering
+					steeringEnabled = False
+					steeringInvert = False
+				}
+				MODULE
+				{
+					name = ModuleWheelMotorSteering
+					steeringEnabled = False
+					steeringInvert = False
+				}
+				MODULE
+				{
+					name = ModuleWheelBrakes
+					brakeInput = 0
+					brakeTweak = 100
+				}
+				MODULE
+				{
+					name = ModuleWheelDeployment
+					position = 1
+					stateString = Retracted
+				}
 			}
 			PART
 			{
@@ -4730,7 +4830,7 @@ GAME
 				mid = 3172848536
 				launchID = 3
 				parent = 6
-				position = 1.58363080024719,-6.94071292877197,0.600001275539398
+				position = 1.583631,-6.940802,0.5000013
 				rotation = -0.7074198,-0.001171719,0.001171876,0.7067921
 				mirror = 1,1,1
 				symMethod = Mirror
@@ -5053,6 +5153,30 @@ GAME
 							actionGroup = None
 						}
 					}
+				}
+				MODULE
+				{
+					name = ModuleWheelSteering
+					steeringEnabled = False
+					steeringInvert = False
+				}
+				MODULE
+				{
+					name = ModuleWheelMotorSteering
+					steeringEnabled = False
+					steeringInvert = False
+				}
+				MODULE
+				{
+					name = ModuleWheelBrakes
+					brakeInput = 0
+					brakeTweak = 100
+				}
+				MODULE
+				{
+					name = ModuleWheelDeployment
+					position = 1
+					stateString = Retracted
 				}
 			}
 			PART
@@ -5629,7 +5753,7 @@ GAME
 				mid = 3172848536
 				launchID = 3
 				parent = 0
-				position = 0,0.663191258907318,0.773190557956696
+				position = 5.782561E-10,0.6567671,0.6733971
 				rotation = -0.7294659,-1.981779E-09,-2.113455E-09,0.6840176
 				mirror = 1,1,1
 				symMethod = Mirror
@@ -5953,6 +6077,30 @@ GAME
 						}
 					}
 				}
+				MODULE
+				{
+					name = ModuleWheelSteering
+					steeringEnabled = True
+					steeringInvert = False
+				}
+				MODULE
+				{
+					name = ModuleWheelMotorSteering
+					steeringEnabled = True
+					steeringInvert = False
+				}
+				MODULE
+				{
+					name = ModuleWheelBrakes
+					brakeInput = 0
+					brakeTweak = 0
+				}
+				MODULE
+				{
+					name = ModuleWheelDeployment
+					position = 1
+					stateString = Retracted
+				}
 			}
 			ACTIONGROUPS
 			{
@@ -5995,7 +6143,20 @@ GAME
 				trimRoll = 0
 				mainThrottle = 0
 			}
+			VESSELMODULES
+			{
+			}
 		}
+	}
+	LoaderInfo
+	{
+		KerbalEngineer.Unity v1.0.0.0 = True
+		KerbalEngineer v1.1.0.1 = True
+		MiniAVC v1.0.3.0 = True
+		KerbalEngineer = True
+		TriggerTech = True
+		scatterer = True
+		.DS_Store = True
 	}
 	ROSTER
 	{

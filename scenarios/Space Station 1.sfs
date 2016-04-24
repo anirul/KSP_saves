@@ -919,7 +919,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 39.9726641157416
-					maxAmount = 40
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -8025,7 +8024,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 241.470466850116
-					maxAmount = 750
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -11882,7 +11880,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 35.7404482343939
-					maxAmount = 40
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -11936,7 +11933,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 35.7404482343939
-					maxAmount = 40
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -11990,7 +11986,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 35.7404482343939
-					maxAmount = 40
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -12044,7 +12039,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 35.7404482343939
-					maxAmount = 40
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -16150,7 +16144,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 39.9726641157416
-					maxAmount = 40
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -16676,7 +16669,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 567.408943412617
-					maxAmount = 750
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -19475,7 +19467,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 95.2885608037365
-					maxAmount = 100
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -20405,7 +20396,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -22122,7 +22113,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -24527,7 +24518,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 7.04824092619393
-					maxAmount = 7.5
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -25293,7 +25283,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -25904,7 +25894,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -25956,7 +25945,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -26008,7 +25996,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -26060,7 +26047,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -26112,7 +26098,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -26164,7 +26149,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -26216,7 +26200,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}
@@ -26268,7 +26251,6 @@ GAME
 				{
 					name = MonoPropellant
 					amount = 17.9715518951416
-					maxAmount = 40
 					flowState = True
 					flowMode = Both
 				}

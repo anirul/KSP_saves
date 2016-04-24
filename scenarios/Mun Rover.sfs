@@ -9046,7 +9046,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -9329,7 +9329,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -10199,7 +10199,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -10482,7 +10482,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -11877,7 +11877,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -12747,7 +12747,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging
@@ -13030,7 +13030,7 @@ GAME
 							guiName = Repair Wheel
 							category = Repair Wheel
 							guiActiveUnfocused = True
-							unfocusedRange = 1.6
+							unfocusedRange = 4.0
 							externalToEVAOnly = True
 						}
 						ToggleStaging

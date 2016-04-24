@@ -114,7 +114,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.1.0
-		UT = 34419.2811165131
+		UT = 34433.9411165108
 		activeVessel = 0
 		VESSEL
 		{
@@ -125,33 +125,33 @@ GAME
 			landed = False
 			landedAt = 
 			splashed = False
-			met = 34310.3611165131
+			met = 34325.0011165108
 			lct = 108.919999999995
-			lastUT = 34419.2811165131
+			lastUT = 34433.9411165108
 			root = 0
-			lat = 0.521513254599805
-			lon = -247.524173343995
-			alt = 40026.4086463272
+			lat = 0.517046181850333
+			lon = -245.737147523794
+			alt = 40030.1471774043
 			hgt = -1
-			nrm = 0.4322439,0.8990146,0.07027417
-			rot = 0.6161303,-0.2358909,0.3419461,0.6691876
-			CoM = -3.749132E-05,-1.839431,0.003945976
+			nrm = 0.4040764,0.9123644,0.06567854
+			rot = 0.6161843,-0.2357828,0.3418478,0.669226
+			CoM = 0.0003637075,-1.839786,0.004011467
 			stg = 3
 			prst = False
 			ref = 3812406598
 			ctrl = True
-			cPch = 0.126
-			cHdg = 1.528
+			cPch = 0.258
+			cHdg = 2.148
 			cMod = 0
 			ORBIT
 			{
-				SMA = 240526.164676961
-				ECC = 0.002146901897722
-				INC = 0.537950991527052
-				LPE = 90.3381153084169
-				LAN = 327.428192543669
-				MNA = 0.240957342498775
-				EPH = 34419.2811165131
+				SMA = 240526.553393327
+				ECC = 0.00214953109029006
+				INC = 0.537951668829951
+				LPE = 90.4382014775948
+				LAN = 327.428003710168
+				MNA = 0.270938788497308
+				EPH = 34433.9411165108
 				REF = 2
 			}
 			PART
@@ -176,8 +176,8 @@ GAME
 				attN = bottom, 2
 				attN = top, 1
 				mass = 0.8
-				temp = 165.028657967365
-				tempExt = 165.252395515948
+				temp = 165.044653099482
+				tempExt = 165.150926075176
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 0
@@ -249,9 +249,15 @@ GAME
 				{
 					name = ModuleReactionWheel
 					isEnabled = True
+					actuatorModeCycle = 0
 					stateString = Running
 					stagingEnabled = True
 					WheelState = Active
+					actuatorModeCycle_UIFlight
+					{
+						controlEnabled = True
+						stateNames = Normal, SAS Only, Pilot Only
+					}
 					EVENTS
 					{
 						OnToggle
@@ -302,6 +308,7 @@ GAME
 					isEnabled = True
 					Deployed = False
 					Inoperable = False
+					cooldownToGo = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -362,7 +369,7 @@ GAME
 							guiName = Crew Report
 							category = Deploy
 							guiActiveUnfocused = True
-							unfocusedRange = 2
+							unfocusedRange = 1.5
 							externalToEVAOnly = True
 						}
 						ResetExperimentExternal
@@ -395,7 +402,7 @@ GAME
 							guiActive = False
 							guiActiveUncommand = False
 							guiIcon = Disable Staging
-							guiName = Disable Staging
+							guiName = Experiment: Disable Staging
 							category = Disable Staging
 							guiActiveUnfocused = False
 							unfocusedRange = 2
@@ -609,7 +616,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 46.8711994240734
+					amount = 46.8632458305636
 					maxAmount = 50
 					flowState = True
 					isTweakable = True
@@ -650,8 +657,8 @@ GAME
 				srfN = srfAttach, -1
 				attN = bottom, 0
 				mass = 0.1
-				temp = 165.034650630205
-				tempExt = 165.130914317514
+				temp = 165.035209886468
+				tempExt = 165.042059943664
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 0
@@ -674,6 +681,7 @@ GAME
 					name = ModuleParachute
 					isEnabled = True
 					persistentState = STOWED
+					animTime = 0
 					minAirPressureToOpen = 0.04
 					deployAltitude = 1000
 					stagingEnabled = True
@@ -866,16 +874,16 @@ GAME
 				istg = 1
 				dstg = 1
 				sqor = -1
-				sepI = 0
-				sidx = -1
+				sepI = 1
+				sidx = 0
 				attm = 0
 				srfN = , -1
 				attN = direct, 3
 				attN = bottom, -1
 				attN = top, 0
 				mass = 0.1
-				temp = 165.042876860109
-				tempExt = 165.083355779639
+				temp = 165.067957756619
+				tempExt = 165.100061828873
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 0
@@ -924,7 +932,7 @@ GAME
 							guiActive = False
 							guiActiveUncommand = False
 							guiIcon = Disable Staging
-							guiName = Disable Staging
+							guiName = Shroud: Disable Staging
 							category = Disable Staging
 							guiActiveUnfocused = False
 							unfocusedRange = 2
@@ -961,6 +969,56 @@ GAME
 					}
 					ACTIONS
 					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleDecouple
+					isEnabled = True
+					ejectionForcePercent = 100
+					isDecoupled = False
+					stagingEnabled = False
+					ejectionForcePercent_UIFlight
+					{
+						controlEnabled = True
+						minValue = 0
+						maxValue = 100
+						stepIncrement = 1
+					}
+					EVENTS
+					{
+						Decouple
+						{
+							active = True
+							guiActive = True
+							guiActiveUncommand = False
+							guiIcon = Decouple
+							guiName = Jettison Heat Shield
+							category = Decouple
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+						ToggleStaging
+						{
+							active = True
+							guiActive = False
+							guiActiveEditor = True
+							guiActiveUncommand = False
+							guiIcon = Disable Staging
+							guiName = HS Jettison Not Staged
+							category = Disable Staging
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+						DecoupleAction
+						{
+							actionGroup = None
+						}
 					}
 				}
 				MODULE
@@ -1033,8 +1091,8 @@ GAME
 				attN = bottom, 4
 				attN = top, 2
 				mass = 0.05
-				temp = 165.066131384928
-				tempExt = 165.24425147215
+				temp = 165.094911416451
+				tempExt = 165.227808837024
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 0
@@ -1211,8 +1269,8 @@ GAME
 				attN = top, 3
 				attN = bottom, 5
 				mass = 0.125
-				temp = 165.085951022521
-				tempExt = 165.362104776843
+				temp = 165.118253652821
+				tempExt = 165.323345456424
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -1275,8 +1333,8 @@ GAME
 				attN = top, 4
 				attN = bottom, 6
 				mass = 0.25
-				temp = 165.245735449402
-				tempExt = 165.283324364718
+				temp = 165.246975996122
+				tempExt = 165.337514617864
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -1339,8 +1397,8 @@ GAME
 				attN = top, 5
 				attN = bottom, -1
 				mass = 0.5
-				temp = 165.482081019617
-				tempExt = 165.695067215462
+				temp = 165.41544619126
+				tempExt = 165.669225140544
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -1438,6 +1496,10 @@ GAME
 					isEnabled = True
 					gimbalLock = False
 					gimbalLimiter = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
 					gimbalActive = True
 					stagingEnabled = True
 					gimbalLock_UIFlight
@@ -1451,8 +1513,33 @@ GAME
 						maxValue = 100
 						stepIncrement = 1
 					}
+					enableYaw_UIFlight
+					{
+						controlEnabled = True
+					}
+					enablePitch_UIFlight
+					{
+						controlEnabled = True
+					}
+					enableRoll_UIFlight
+					{
+						controlEnabled = True
+					}
 					EVENTS
 					{
+						ToggleToggles
+						{
+							active = True
+							guiActive = True
+							guiActiveEditor = True
+							guiActiveUncommand = False
+							guiIcon = Actuation Toggles
+							guiName = Show Actuation Toggles
+							category = Actuation Toggles
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
 						ToggleStaging
 						{
 							active = True
@@ -1477,6 +1564,18 @@ GAME
 							actionGroup = None
 						}
 						FreeAction
+						{
+							actionGroup = None
+						}
+						TogglePitchAction
+						{
+							actionGroup = None
+						}
+						ToggleYawAction
+						{
+							actionGroup = None
+						}
+						ToggleRollAction
 						{
 							actionGroup = None
 						}
@@ -1537,7 +1636,7 @@ GAME
 							guiActive = False
 							guiActiveUncommand = False
 							guiIcon = Disable Staging
-							guiName = Disable Staging
+							guiName = Shroud: Disable Staging
 							category = Disable Staging
 							guiActiveUnfocused = False
 							unfocusedRange = 2
@@ -1636,8 +1735,8 @@ GAME
 				sym = 13
 				srfN = srfAttach, 5
 				mass = 0.01
-				temp = 165.399106321583
-				tempExt = 165.361440335587
+				temp = 165.312503676284
+				tempExt = 165.272446732929
 				tempExtUnexp = 4
 				expt = 0.1
 				state = 1
@@ -1703,8 +1802,8 @@ GAME
 				sym = 14
 				srfN = srfAttach, 7
 				mass = 0.015
-				temp = 165.453856310773
-				tempExt = 165.45501427636
+				temp = 165.348063304506
+				tempExt = 165.364548140191
 				tempExtUnexp = 4
 				expt = 0
 				state = 1
@@ -1724,44 +1823,35 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelBase
+					name = ModuleWheelBase
 					isEnabled = True
+					wheelType = LEG
+					isGrounded = False
+					autoFriction = False
+					frictionMultiplier = 1
+					suspensionEnabled = True
 					stagingEnabled = True
+					frictionMultiplier_UIFlight
+					{
+						controlEnabled = True
+						minValue = 0.01
+						maxValue = 2
+						stepIncrement = 0.01
+					}
+					suspensionEnabled_UIFlight
+					{
+						controlEnabled = True
+					}
 					EVENTS
 					{
-						DebugGroundHeightOffset
+						EvtAutoFrictionToggle
 						{
 							active = True
-							guiActive = True
+							guiActive = False
 							guiActiveUncommand = False
-							guiIcon = Debug Ground Height Offset
-							guiName = Debug Ground Height Offset
-							category = Debug Ground Height Offset
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingWheelCollider
-						{
-							active = True
-							guiActive = True
-							guiActiveUncommand = False
-							guiIcon = Ping Wheel Collider
-							guiName = Ping Wheel Collider
-							category = Ping Wheel Collider
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingMe
-						{
-							active = True
-							guiActive = True
-							guiActiveEditor = True
-							guiActiveUncommand = False
-							guiIcon = Show in Inspector
-							guiName = Show in Inspector
-							category = Show in Inspector
+							guiIcon = 
+							guiName = 
+							category = 
 							guiActiveUnfocused = False
 							unfocusedRange = 2
 							externalToEVAOnly = True
@@ -1781,12 +1871,26 @@ GAME
 					}
 					ACTIONS
 					{
+						EnableSuspension
+						{
+							actionGroup = None
+						}
+						DisableSuspension
+						{
+							actionGroup = None
+						}
+						ActAutoFrictionToggle
+						{
+							actionGroup = None
+						}
 					}
 				}
 				MODULE
 				{
-					name = zModuleWheelSuspension
+					name = ModuleWheelSuspension
 					isEnabled = True
+					suspensionPos = (-0.0005642796, 0, -3.02133E-05)
+					autoBoost = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -1809,7 +1913,7 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelDeployment
+					name = ModuleWheelDeployment
 					isEnabled = True
 					stateString = Retracted
 					stagingEnabled = True
@@ -1852,11 +1956,48 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelLock
+					name = ModuleWheelLock
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
+						ToggleStaging
+						{
+							active = True
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Disable Staging
+							guiName = Disable Staging
+							category = Disable Staging
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWheelDamage
+					isEnabled = True
+					isDamaged = False
+					stagingEnabled = True
+					EVENTS
+					{
+						EventRepairExternal
+						{
+							active = False
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Repair Wheel
+							guiName = Repair Wheel
+							category = Repair Wheel
+							guiActiveUnfocused = True
+							unfocusedRange = 4
+							externalToEVAOnly = True
+						}
 						ToggleStaging
 						{
 							active = True
@@ -1898,8 +2039,8 @@ GAME
 				sym = 13
 				srfN = srfAttach, 5
 				mass = 0.01
-				temp = 165.382525116463
-				tempExt = 165.349736000704
+				temp = 165.304996179811
+				tempExt = 165.265023669653
 				tempExtUnexp = 4
 				expt = 0.1
 				state = 1
@@ -1965,8 +2106,8 @@ GAME
 				sym = 14
 				srfN = srfAttach, 9
 				mass = 0.015
-				temp = 165.431066173953
-				tempExt = 165.446540813278
+				temp = 165.338566500593
+				tempExt = 165.360989558976
 				tempExtUnexp = 4
 				expt = 0
 				state = 1
@@ -1986,44 +2127,35 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelBase
+					name = ModuleWheelBase
 					isEnabled = True
+					wheelType = LEG
+					isGrounded = False
+					autoFriction = False
+					frictionMultiplier = 1
+					suspensionEnabled = True
 					stagingEnabled = True
+					frictionMultiplier_UIFlight
+					{
+						controlEnabled = True
+						minValue = 0.01
+						maxValue = 2
+						stepIncrement = 0.01
+					}
+					suspensionEnabled_UIFlight
+					{
+						controlEnabled = True
+					}
 					EVENTS
 					{
-						DebugGroundHeightOffset
+						EvtAutoFrictionToggle
 						{
 							active = True
-							guiActive = True
+							guiActive = False
 							guiActiveUncommand = False
-							guiIcon = Debug Ground Height Offset
-							guiName = Debug Ground Height Offset
-							category = Debug Ground Height Offset
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingWheelCollider
-						{
-							active = True
-							guiActive = True
-							guiActiveUncommand = False
-							guiIcon = Ping Wheel Collider
-							guiName = Ping Wheel Collider
-							category = Ping Wheel Collider
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingMe
-						{
-							active = True
-							guiActive = True
-							guiActiveEditor = True
-							guiActiveUncommand = False
-							guiIcon = Show in Inspector
-							guiName = Show in Inspector
-							category = Show in Inspector
+							guiIcon = 
+							guiName = 
+							category = 
 							guiActiveUnfocused = False
 							unfocusedRange = 2
 							externalToEVAOnly = True
@@ -2043,12 +2175,26 @@ GAME
 					}
 					ACTIONS
 					{
+						EnableSuspension
+						{
+							actionGroup = None
+						}
+						DisableSuspension
+						{
+							actionGroup = None
+						}
+						ActAutoFrictionToggle
+						{
+							actionGroup = None
+						}
 					}
 				}
 				MODULE
 				{
-					name = zModuleWheelSuspension
+					name = ModuleWheelSuspension
 					isEnabled = True
+					suspensionPos = (-0.0005642796, 0, -3.02133E-05)
+					autoBoost = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -2071,7 +2217,7 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelDeployment
+					name = ModuleWheelDeployment
 					isEnabled = True
 					stateString = Retracted
 					stagingEnabled = True
@@ -2114,11 +2260,48 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelLock
+					name = ModuleWheelLock
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
+						ToggleStaging
+						{
+							active = True
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Disable Staging
+							guiName = Disable Staging
+							category = Disable Staging
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWheelDamage
+					isEnabled = True
+					isDamaged = False
+					stagingEnabled = True
+					EVENTS
+					{
+						EventRepairExternal
+						{
+							active = False
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Repair Wheel
+							guiName = Repair Wheel
+							category = Repair Wheel
+							guiActiveUnfocused = True
+							unfocusedRange = 4
+							externalToEVAOnly = True
+						}
 						ToggleStaging
 						{
 							active = True
@@ -2160,8 +2343,8 @@ GAME
 				sym = 13
 				srfN = srfAttach, 5
 				mass = 0.01
-				temp = 165.340851243636
-				tempExt = 165.55221994839
+				temp = 165.495917258792
+				tempExt = 165.672094493663
 				tempExtUnexp = 4
 				expt = 0.1
 				state = 1
@@ -2227,8 +2410,8 @@ GAME
 				sym = 14
 				srfN = srfAttach, 11
 				mass = 0.015
-				temp = 165.359151027098
-				tempExt = 165.809172328601
+				temp = 165.556979457621
+				tempExt = 165.957968038144
 				tempExtUnexp = 4
 				expt = 0
 				state = 1
@@ -2248,44 +2431,35 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelBase
+					name = ModuleWheelBase
 					isEnabled = True
+					wheelType = LEG
+					isGrounded = False
+					autoFriction = False
+					frictionMultiplier = 1
+					suspensionEnabled = True
 					stagingEnabled = True
+					frictionMultiplier_UIFlight
+					{
+						controlEnabled = True
+						minValue = 0.01
+						maxValue = 2
+						stepIncrement = 0.01
+					}
+					suspensionEnabled_UIFlight
+					{
+						controlEnabled = True
+					}
 					EVENTS
 					{
-						DebugGroundHeightOffset
+						EvtAutoFrictionToggle
 						{
 							active = True
-							guiActive = True
+							guiActive = False
 							guiActiveUncommand = False
-							guiIcon = Debug Ground Height Offset
-							guiName = Debug Ground Height Offset
-							category = Debug Ground Height Offset
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingWheelCollider
-						{
-							active = True
-							guiActive = True
-							guiActiveUncommand = False
-							guiIcon = Ping Wheel Collider
-							guiName = Ping Wheel Collider
-							category = Ping Wheel Collider
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingMe
-						{
-							active = True
-							guiActive = True
-							guiActiveEditor = True
-							guiActiveUncommand = False
-							guiIcon = Show in Inspector
-							guiName = Show in Inspector
-							category = Show in Inspector
+							guiIcon = 
+							guiName = 
+							category = 
 							guiActiveUnfocused = False
 							unfocusedRange = 2
 							externalToEVAOnly = True
@@ -2305,12 +2479,26 @@ GAME
 					}
 					ACTIONS
 					{
+						EnableSuspension
+						{
+							actionGroup = None
+						}
+						DisableSuspension
+						{
+							actionGroup = None
+						}
+						ActAutoFrictionToggle
+						{
+							actionGroup = None
+						}
 					}
 				}
 				MODULE
 				{
-					name = zModuleWheelSuspension
+					name = ModuleWheelSuspension
 					isEnabled = True
+					suspensionPos = (-0.0005642796, 0, -3.02133E-05)
+					autoBoost = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -2333,7 +2521,7 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelDeployment
+					name = ModuleWheelDeployment
 					isEnabled = True
 					stateString = Retracted
 					stagingEnabled = True
@@ -2376,11 +2564,48 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelLock
+					name = ModuleWheelLock
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
+						ToggleStaging
+						{
+							active = True
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Disable Staging
+							guiName = Disable Staging
+							category = Disable Staging
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWheelDamage
+					isEnabled = True
+					isDamaged = False
+					stagingEnabled = True
+					EVENTS
+					{
+						EventRepairExternal
+						{
+							active = False
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Repair Wheel
+							guiName = Repair Wheel
+							category = Repair Wheel
+							guiActiveUnfocused = True
+							unfocusedRange = 4
+							externalToEVAOnly = True
+						}
 						ToggleStaging
 						{
 							active = True
@@ -2422,8 +2647,8 @@ GAME
 				sym = 11
 				srfN = srfAttach, 5
 				mass = 0.01
-				temp = 165.303167627639
-				tempExt = 165.410352087868
+				temp = 165.430952367298
+				tempExt = 165.516584713477
 				tempExtUnexp = 4
 				expt = 0.1
 				state = 1
@@ -2489,8 +2714,8 @@ GAME
 				sym = 12
 				srfN = srfAttach, 13
 				mass = 0.015
-				temp = 165.329887267648
-				tempExt = 165.785214476343
+				temp = 165.501709363613
+				tempExt = 165.917652168119
 				tempExtUnexp = 4
 				expt = 0
 				state = 1
@@ -2510,44 +2735,35 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelBase
+					name = ModuleWheelBase
 					isEnabled = True
+					wheelType = LEG
+					isGrounded = False
+					autoFriction = False
+					frictionMultiplier = 1
+					suspensionEnabled = True
 					stagingEnabled = True
+					frictionMultiplier_UIFlight
+					{
+						controlEnabled = True
+						minValue = 0.01
+						maxValue = 2
+						stepIncrement = 0.01
+					}
+					suspensionEnabled_UIFlight
+					{
+						controlEnabled = True
+					}
 					EVENTS
 					{
-						DebugGroundHeightOffset
+						EvtAutoFrictionToggle
 						{
 							active = True
-							guiActive = True
+							guiActive = False
 							guiActiveUncommand = False
-							guiIcon = Debug Ground Height Offset
-							guiName = Debug Ground Height Offset
-							category = Debug Ground Height Offset
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingWheelCollider
-						{
-							active = True
-							guiActive = True
-							guiActiveUncommand = False
-							guiIcon = Ping Wheel Collider
-							guiName = Ping Wheel Collider
-							category = Ping Wheel Collider
-							guiActiveUnfocused = False
-							unfocusedRange = 2
-							externalToEVAOnly = True
-						}
-						PingMe
-						{
-							active = True
-							guiActive = True
-							guiActiveEditor = True
-							guiActiveUncommand = False
-							guiIcon = Show in Inspector
-							guiName = Show in Inspector
-							category = Show in Inspector
+							guiIcon = 
+							guiName = 
+							category = 
 							guiActiveUnfocused = False
 							unfocusedRange = 2
 							externalToEVAOnly = True
@@ -2567,12 +2783,26 @@ GAME
 					}
 					ACTIONS
 					{
+						EnableSuspension
+						{
+							actionGroup = None
+						}
+						DisableSuspension
+						{
+							actionGroup = None
+						}
+						ActAutoFrictionToggle
+						{
+							actionGroup = None
+						}
 					}
 				}
 				MODULE
 				{
-					name = zModuleWheelSuspension
+					name = ModuleWheelSuspension
 					isEnabled = True
+					suspensionPos = (-0.0005642796, 0, -3.02133E-05)
+					autoBoost = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -2595,7 +2825,7 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelDeployment
+					name = ModuleWheelDeployment
 					isEnabled = True
 					stateString = Retracted
 					stagingEnabled = True
@@ -2638,11 +2868,48 @@ GAME
 				}
 				MODULE
 				{
-					name = zModuleWheelLock
+					name = ModuleWheelLock
 					isEnabled = True
 					stagingEnabled = True
 					EVENTS
 					{
+						ToggleStaging
+						{
+							active = True
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Disable Staging
+							guiName = Disable Staging
+							category = Disable Staging
+							guiActiveUnfocused = False
+							unfocusedRange = 2
+							externalToEVAOnly = True
+						}
+					}
+					ACTIONS
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleWheelDamage
+					isEnabled = True
+					isDamaged = False
+					stagingEnabled = True
+					EVENTS
+					{
+						EventRepairExternal
+						{
+							active = False
+							guiActive = False
+							guiActiveUncommand = False
+							guiIcon = Repair Wheel
+							guiName = Repair Wheel
+							category = Repair Wheel
+							guiActiveUnfocused = True
+							unfocusedRange = 4
+							externalToEVAOnly = True
+						}
 						ToggleStaging
 						{
 							active = True
@@ -2684,8 +2951,8 @@ GAME
 				sym = 18
 				srfN = srfAttach, 5
 				mass = 0.005
-				temp = 165.278656163307
-				tempExt = 165.419842851913
+				temp = 165.266137923067
+				tempExt = 165.284989958185
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -2706,7 +2973,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 96.8711994240655
+					amount = 96.8632458305558
 					maxAmount = 100
 					flowState = True
 					isTweakable = True
@@ -2738,8 +3005,8 @@ GAME
 				sym = 18
 				srfN = srfAttach, 5
 				mass = 0.005
-				temp = 165.271273259759
-				tempExt = 165.291971388042
+				temp = 165.265959921435
+				tempExt = 165.284636496175
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -2760,7 +3027,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 96.8711994240655
+					amount = 96.8632458305558
 					maxAmount = 100
 					flowState = True
 					isTweakable = True
@@ -2792,8 +3059,8 @@ GAME
 				sym = 18
 				srfN = srfAttach, 5
 				mass = 0.005
-				temp = 165.275332004174
-				tempExt = 165.381039146402
+				temp = 165.266124157502
+				tempExt = 165.284962623625
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -2814,7 +3081,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 96.8711994240655
+					amount = 96.8632458305558
 					maxAmount = 100
 					flowState = True
 					isTweakable = True
@@ -2846,8 +3113,8 @@ GAME
 				sym = 17
 				srfN = srfAttach, 5
 				mass = 0.005
-				temp = 165.282495365934
-				tempExt = 165.461703984667
+				temp = 165.266212852478
+				tempExt = 165.285138747268
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 1
@@ -2868,7 +3135,7 @@ GAME
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 96.8711994240655
+					amount = 96.8632458305558
 					maxAmount = 100
 					flowState = True
 					isTweakable = True
@@ -2898,8 +3165,8 @@ GAME
 				srfN = srfAttach, 0
 				attN = bottom, -1
 				mass = 0.005
-				temp = 165.079196714589
-				tempExt = 165.210839838342
+				temp = 165.066513501565
+				tempExt = 165.107545406832
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 0
@@ -2926,6 +3193,7 @@ GAME
 					animTime = 0
 					animSpeed = 1
 					deployPercent = 100
+					animationIsDisabled = False
 					stagingEnabled = True
 					deployPercent_UIFlight
 					{
@@ -3048,12 +3316,12 @@ GAME
 				dstg = 0
 				sqor = 1
 				sepI = 0
-				sidx = 0
+				sidx = 1
 				attm = 1
 				srfN = srfAttach, 0
 				mass = 0.075
-				temp = 164.867806205239
-				tempExt = 165.061630065015
+				temp = 164.882697257522
+				tempExt = 164.992911496185
 				tempExtUnexp = 4
 				expt = 0.5
 				state = 0
@@ -3076,6 +3344,7 @@ GAME
 					name = ModuleParachute
 					isEnabled = True
 					persistentState = STOWED
+					animTime = 0
 					minAirPressureToOpen = 0.02
 					deployAltitude = 2500
 					stagingEnabled = True
@@ -3256,7 +3525,7 @@ GAME
 			ACTIONGROUPS
 			{
 				Stage = True, 32550.4464158549
-				Gear = False, 34274.3411165363
+				Gear = False, 34430.1611165114
 				Light = False, 0
 				RCS = False, 0
 				SAS = True, 34214.5611165459
@@ -3291,13 +3560,19 @@ GAME
 			}
 			CTRLSTATE
 			{
-				pitch = 0.01902728
-				yaw = -0.1300374
-				roll = 0.0005407716
+				pitch = 0.0007986616
+				yaw = -0.005067996
+				roll = 7.136411E-05
 				trimPitch = 0
 				trimYaw = 0
 				trimRoll = 0
 				mainThrottle = 0
+			}
+			VESSELMODULES
+			{
+				ModularFlightIntegrator
+				{
+				}
 			}
 		}
 	}

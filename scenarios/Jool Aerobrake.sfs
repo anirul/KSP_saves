@@ -2,7 +2,7 @@ GAME
 {
 	version = 1.1.0
 	Title = Jool Aerobrake
-	Description = Join the crew of the Inspiration of the Windward Spirit as they aerobrake in the Jool system! Just don't forget to retract the solar panels...
+	Description = Join the crew of the Inspiration of the Windward Spirit as they aerobrake in the Jool system!^^Just don't forget to retract the solar panels...
 	linkURL = 
 	linkCaption = 
 	Mode = SCENARIO

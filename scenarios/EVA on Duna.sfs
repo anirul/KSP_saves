@@ -2,7 +2,7 @@ GAME
 {
 	version = 1.1.0
 	Title = EVA on Duna
-	Description = Susa Kerman is exploring the red planet. Can you bring her home?  Her ship is rather basic, so be careful...
+	Description = Susa Kerman is exploring the red planet. Can you bring her home?^^Her ship is rather basic, so be careful...
 	linkURL = 
 	linkCaption = 
 	Mode = SCENARIO

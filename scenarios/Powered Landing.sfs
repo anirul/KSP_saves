@@ -2,7 +2,7 @@ GAME
 {
 	version = 1.1.0
 	Title = Powered Landing
-	Description = Bring the Homeseeker flyback booster to a gentle landing at the KSC so it can be refuelled and used again.  What do you mean it's hard?  It's not like we're asking you to land on something small like a boat!
+	Description = Bring the Homeseeker flyback booster to a gentle landing at the KSC so it can be refuelled and used again.^^What do you mean it's hard? It's not like we're asking you to land on something small.^^Like a boat!
 	linkURL = 
 	linkCaption = 
 	Mode = SCENARIO
@@ -6586,7 +6586,7 @@ GAME
 					deploy = False
 					deployInvert = False
 					partDeployInvert = False
-					authorityLimiter = -100.4
+					authorityLimiter = 100
 					stagingEnabled = True
 					ignorePitch_UIFlight
 					{
@@ -6705,7 +6705,7 @@ GAME
 					deploy = False
 					deployInvert = False
 					partDeployInvert = False
-					authorityLimiter = -100.4
+					authorityLimiter = 100
 					stagingEnabled = True
 					ignorePitch_UIFlight
 					{
@@ -6824,7 +6824,7 @@ GAME
 					deploy = False
 					deployInvert = False
 					partDeployInvert = False
-					authorityLimiter = -100.4
+					authorityLimiter = 100
 					stagingEnabled = True
 					ignorePitch_UIFlight
 					{
@@ -6943,7 +6943,7 @@ GAME
 					deploy = False
 					deployInvert = False
 					partDeployInvert = False
-					authorityLimiter = -100.4
+					authorityLimiter = 100
 					stagingEnabled = True
 					ignorePitch_UIFlight
 					{
